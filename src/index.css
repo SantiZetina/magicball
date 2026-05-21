@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Force the Shader canvas to fill whatever container it lives in */
+.magic-ball canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15%       { transform: translate(-2px, 0.4px) rotate(-0.8deg); }
+  30%       { transform: translate(2px, -0.4px) rotate(0.8deg); }
+  45%       { transform: translate(-1.4px, 0.2px) rotate(-0.4deg); }
+  60%       { transform: translate(1.4px, -0.2px) rotate(0.4deg); }
+  75%       { transform: translate(-0.6px, 0) rotate(-0.2deg); }
+  90%       { transform: translate(0.6px, 0) rotate(0.2deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@utility animate-shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.45s ease-out forwards;
+}
